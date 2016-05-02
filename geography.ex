@@ -2,10 +2,6 @@ defmodule Country do
   defstruct [:name, :language, :cities]
 end
 
-defmodule City do
-  defstruct [:name, :population, :latitude, :longitude]
-end
-
 defmodule Geography do
   @moduledoc """
   Using files and structures.

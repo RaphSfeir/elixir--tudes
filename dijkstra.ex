@@ -21,4 +21,5 @@ defmodule Dijkstra do
       m < n   -> gcd(m, n-m)
     end
   end
+
 end
