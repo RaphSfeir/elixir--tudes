@@ -18,7 +18,7 @@ defmodule College do
 
   # Read next line from file; if not end of file, process
   # the room on that line. Recursively read through end of file.
-  
+
   defp process_line(device, room_list) do
     data = IO.read(device, :line)
     case data do
