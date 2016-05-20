@@ -5,6 +5,35 @@ defmodule Stats do
 
   @vsn 0.1
 
+
+  @doc """
+  Calculates the mean of a list of integers
+  """
+
+  @spec mean([number]) :: number
+
+  def mean(numbers) do
+    Enum.sum(numbers) / Enum.count(numbers)
+  end
+
+  @doc """
+  Calculates the standard deviation of a list of numbers
+  """
+
+  @spec stdv([number]) :: number
+
+  def stdv(numbers) do
+     n = Enum.count(numbers)
+     sum = List.foldl(numbers, 0, fn(x, acc) -> x + acc end)
+     sum_of_squares = List.foldl(numbers, 0, fn(x, acc) -> x * x + acc end)
+
+     #bonus points !
+     {sum, sum_squares} = List.foldl(numbers, {0,0}, fn(x, acc_sum, acc_sum_squares) ->
+       {x + acc_sum, x * x + acc_sum_squares} end)
+
+     :math.sqrt(sum * sum - sum_of_squares * n / (n * (n - 1)))
+  end
+
   @doc """
 
   """
